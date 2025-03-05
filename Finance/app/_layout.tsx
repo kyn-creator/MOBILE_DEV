@@ -32,8 +32,11 @@ export default function RootLayout() {
   return (
       <Stack screenOptions={{headerStyle: {backgroundColor: theme.headerBackground}}}>
         <Stack.Screen name="index" options={{ headerShown: false,title:'Home' }} />
-        
-        <Stack.Screen name="KeypadScreen" options={{ headerShown: false,title:'Computations' }} />
+        <Stack.Screen name="Keypad" options={{ headerShown: false,title:'Computations' }} />
+        <Stack.Screen name="PlannedPayments" options={{ headerShown: false,title:'Pay' }} />
+        <Stack.Screen name="HistoryRecords" options={{ headerShown: false,title:'Records' }} />
+        <Stack.Screen name="ExpenseStructure" options={{ headerShown: false,title:'Expense' }} />
+
 
         <Stack.Screen name="+not-found" />
       </Stack>
