@@ -6,15 +6,13 @@ import { useEffect } from 'react';
 import { Appearance } from 'react-native';
 import { Colors } from '@/constants/Colors';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = Appearance.getColorScheme();
-
   const theme = colorScheme === 'dark' ? Colors.dark : Colors.light;
+
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -30,16 +28,14 @@ export default function RootLayout() {
   }
 
   return (
-      <Stack screenOptions={{headerStyle: {backgroundColor: theme.headerBackground}}}>
-        <Stack.Screen name="index" options={{ headerShown: false,title:'Home' }} />
-        <Stack.Screen name="Keypad" options={{ headerShown: false,title:'Computations' }} />
-        <Stack.Screen name="PlannedPayments" options={{ headerShown: false,title:'Pay' }} />
-        <Stack.Screen name="HistoryRecords" options={{ headerShown: false,title:'Records' }} />
-        <Stack.Screen name="ExpenseStructure" options={{ headerShown: false,title:'Expense' }} />
-
-
-        <Stack.Screen name="+not-found" />
-      </Stack>
-
+    <Stack screenOptions={{ headerStyle: { backgroundColor: theme.headerBackground } }}>
+      <Stack.Screen name="index" options={{ headerShown: false, title: 'Home' }} />
+      <Stack.Screen name="Keypad" options={{ headerShown: false, title: 'Computations' }} />
+      <Stack.Screen name="PlannedPayments" options={{ headerShown: false, title: 'Pay' }} />
+      <Stack.Screen name="HistoryRecords" options={{ headerShown: false, title: 'Records' }} />
+      <Stack.Screen name="ExpenseStructure" options={{ headerShown: false, title: 'Expense' }} />
+      <Stack.Screen name="CategoryScreen" options={{ headerShown: false, title: 'Category' }} />
+      <Stack.Screen name="+not-found" />
+    </Stack>
   );
 }
